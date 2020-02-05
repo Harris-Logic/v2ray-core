@@ -171,3 +171,19 @@ Current IP: 58.247.150.247，和shadowsocks服务端日志打印出来的客户�
 * [https://wiki.archlinux.org/index.php/Proxy\_server](https://wiki.archlinux.org/index.php/Proxy_server)
 * [https://zh.wikipedia.org/wiki/SOCKS](https://zh.wikipedia.org/wiki/SOCKS)
 
+
+
+
+
+#### 
+
+#### [@mrdulin](https://github.com/mrdulin) 执行 `proxy` 之后, `curl ip.cn` 的结果: curl: \(7\) Failed to connect to 127.0.0.1 port 1080: Connection refused在前面加上 sudo 后, 获取的 ip 还是本地运营商的. 这是怎么回事呢? [@Huang-Libo](https://github.com/Huang-Libo) 请确保本地代理服务器的地址和端口是`127.0.0.1:1080` 请打开ss,进行代理服务器设置 我试了下，退出ss，就是你这个错误，因为本地代理服务器没有启动。 [@Ericva](https://github.com/Ericva) 1.本地的ss是客户端，你的VPS上的ss是服务端，客户端的服务器配置中，地址和端口填写你VPS的ip地址和ss服务端运行后的端口号，这样客户端就连接到你的vps的ss服务了。 [![image](https://user-images.githubusercontent.com/17866683/33050928-6d40fe3a-cea2-11e7-8584-f818ce4c5689.png)](https://user-images.githubusercontent.com/17866683/33050928-6d40fe3a-cea2-11e7-8584-f818ce4c5689.png) ss客户端启动后，可以修改客户端服务的端口号，不一定是1080，使用switchomega，proxifier等代理切换软件时，指定ss的ip和端口是客户端的。 [![image](https://user-images.githubusercontent.com/17866683/33050878-34187c28-cea2-11e7-9dcb-2f21cc7046ca.png)](https://user-images.githubusercontent.com/17866683/33050878-34187c28-cea2-11e7-9dcb-2f21cc7046ca.png) 2.你的服务器配置ip或者端口不正确，客户端ss没有链接到VPS上的ss服务端，或者是你VPS上的ss服务端没有启动或是出了问题。如下图，我随便输入了一个ip和端口，执行proxy后，结果显示“curl: \(52\) Empty reply from server”[![](https://camo.githubusercontent.com/b566c22f8df19b9240016c94fcf37779a7753e03/68747470733a2f2f7773312e73696e61696d672e636e2f6c617267652f303036744b665463677931666c70686a797a7238666a33307773307438676c782e6a7067)](https://camo.githubusercontent.com/b566c22f8df19b9240016c94fcf37779a7753e03/68747470733a2f2f7773312e73696e61696d672e636e2f6c617267652f303036744b665463677931666c70686a797a7238666a33307773307438676c782e6a7067) 3.proxychains-ng和通过在`.zshrc`或者`.bashrc`中指定代理`alias`是两种终端走代理的方式，没有依赖关系。
+
+
+
+代理已经能显示外国的地址，但是ping [www.google.com](http://www.google.com/) 的时候还是ping不通，请问知道为什么吗  
+[@liushazm](https://github.com/liushazm)  
+ss代理是基于tcp或者udp协议，而ping是走的icmp协议因此在ss下不能ping通google  
+参考:  
+[https://stackoverflow.com/questions/5274934/use-ping-through-socks-server](https://stackoverflow.com/questions/5274934/use-ping-through-socks-server)
+
