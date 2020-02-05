@@ -1,6 +1,6 @@
-# Untitled
+# Linux下Nodejs安装（完整详细）
 
-### Linux下Nodejs安装（完整详细） 原
+### Linux下Nodejs安装（完整详细） 
 
 [顽  顽Shi](https://my.oschina.net/blogshi) 发布于 2014/05/05 23:08 字数 454 阅读 32.9W 收藏 72 点赞 14 [ 评论 19](https://my.oschina.net/blogshi/blog/260953#comments)
 
