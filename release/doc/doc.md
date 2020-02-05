@@ -2,7 +2,7 @@
 
 V2Ray 内核可以单独使用，也可以配置其它程序一起使用。
 
-官网：https://www.v2ray.com/
+官网：[https://www.v2ray.com/](https://www.v2ray.com/)
 
 ## 使用方式
 
@@ -29,9 +29,10 @@ v2ray --config=<full path>
 
 压缩包中的 .sig 文件为 GPG 签名文件，用来验证对应程序文件的真实性。签名公钥可以在下面的链接找到：
 
-https://github.com/v2ray/v2ray-core/blob/master/release/verify/official_release.asc
+[https://github.com/v2ray/v2ray-core/blob/master/release/verify/official\_release.asc](https://github.com/v2ray/v2ray-core/blob/master/release/verify/official_release.asc)
 
 ## 问题反馈
 
-* Github: https://github.com/v2ray/v2ray-core
-* Telegram: https://t.me/v2fly_chat
+* Github: [https://github.com/v2ray/v2ray-core](https://github.com/v2ray/v2ray-core)
+* Telegram: [https://t.me/v2fly\_chat](https://t.me/v2fly_chat)
+
