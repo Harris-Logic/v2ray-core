@@ -1,4 +1,4 @@
-# Untitled
+# Mac OSX终端走shadowsocks代理
 
 
 
